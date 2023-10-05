@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+
+
+
+.padre{
+    display: flex;
+    height: 100%;
+    width: 60%;
+}
+
+.barra_lateral{
+    background: linear-gradient(to bottom, rgb(3, 126, 105), rgb(9, 240, 163), rgb(65, 241, 197));
+    width: 5%;
+}
+
+.contenedor{
+    background-color: white;
+    width: 93%;
+}
+
+.bombillo{
+    height: 33%;
+    width: 19%;
+    margin-left: 10%;
+
+}
+.bloque1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo_factura{
+color: rgb(15, 148, 126);
+font-size: 50px;
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing:7px;
+}
+.textos_b1{
+margin-right: 10%;
+margin-top: 13%;
+}
+.texto_fecha{
+    color: rgb(15, 148, 126);
+    font-weight: bold; 
+    margin-top: 15%; 
+    text-align: right;
+}
+.texto_factura{
+    color: rgb(15, 148, 126);  
+    font-weight: bold;  
+    text-align: right;
+}
+.informacion {
+    margin-left:4% ;
+    margin-top:5%;
+
+}
+.nombres{
+    width: 30%;
+
+}
+.informacion_b1{
+    display: flex;
+    margin-left: 13%;
+}
+.bloque2{
+    display: grid;
+    grid-template-columns: 38% 62%;
+    margin-top: 10%;
+    margin-left: 7%;
+}
+.pago{
+    display: flex;
+    flex-direction: column;
+    margin-left: 32%;
+    margin-top: 8%;
+    margin-right: 5%;
+}
+.contenedor_cuenta{
+    display: flex;
+    margin-left: 2%;
+}
+.contenedor_correo{
+    display: flex;
+}
+.texto_informacion{
+    margin-top: 2%;
+    font-size: 15px;
+    width: 100%;
+    
+}
+.nombre{
+   font-size: 38px; 
+   color: rgb(15, 148, 126);
+}
+.texto_pago{
+    color: rgb(15, 148, 126);  
+    font-size: 15px;
+}
+.texto_cuenta{
+    font-size: 14PX;
+    font-weight: bold; 
+}
+.texto_correo{
+    font-size: 14PX;
+    font-weight: bold;
+    margin-left: 1%;
+}
+.cuenta{
+    font-size: 15px; 
+    margin-left: 2%;
+}
+.correo{
+    font-size: 15px; 
+    margin-left: 3%;
+}
+.contenedor_tabla{
+   margin-top: 10%;
+   margin-left: 4%;
+   margin-right:1%;
+}
+.tabla{
+    width: 98%;
+    border-collapse: collapse;
+}
+.l_blanca{
+    text-align: center;
+    padding: 10px;
+    border-bottom: solid 4px rgb(231, 230, 230);
+    font-size: 15px;
+}
+.l_gris{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(231, 230, 230);
+    font-size: 15px;
+}
+.e_1{
+    background-color: rgb(22, 187, 160);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    
+}
+.d_gris{
+    background-color: rgb(231, 230, 230);
+    font-size: 15px;
+}
+.d_blanca{
+    border-bottom: solid 4px rgb(231, 230, 230);
+    font-size: 15px;
+}
+.subtotal{
+    display: flex;
+    margin-left: 72%;
+    margin-top: 2%;
+    font-size: 15px;
+}
+.imp{
+    display: flex;
+    margin-left: 72%;
+    margin-top: 2%;
+    font-size: 15px;
+}
+.total{
+    display: flex;
+    margin-left: 72%;
+    margin-top: 2%;
+    font-size: 15px;
+}
+.sub_tabla{
+    margin-left: 10%;
+}
+.texto_subtotal{
+    margin-right: 23%;
+    font-size: 15px;
+}
+.texto_imp{
+    margin-right: 15%;
+    font-size: 15px;
+}
+.texto_total{
+    margin-right: 25%; 
+    font-weight: bold; 
+    font-size: 15px;
+}
+.titulo_card{
+    width: 30%;
+
+}
+.titulo_art{
+    background-color: rgb(22, 187, 160);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+.texto_art{
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+}
+.info_cards{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.titulos_cards{
+  margin-left: 4%;
+  text-align: right;
+ 
+}
+.texto_cards{
+    margin-left: 3%;
+   
+}
+.cards{
+    margin-bottom: 3%;
+}
+.cards_2{
+    display: flex;
+    border: 6px solid rgb(231, 230, 230); 
+    width: 30%;
+    
+}
+.cards_tabla{
+    display: none;
+}
+.bloque3{
+    display: flex;
+    margin-top: 10%;
+    margin-bottom: 4%;
+
+}
+.contenedor_contacto{
+    margin-left: 4%;
+}
+.texto_gracias{
+    font-size: 48px;
+    font-weight: bold; 
+    color: rgb(22, 187, 160);
+
+}
+.contenedor_gracias{
+    margin-left:35% ;
+}
+hr{
+    margin-left: 10%;
+    width: 80%;
+    border: 4px solid  rgb(22, 187, 160);
+}
+.texto_footer{
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+@media(max-width: 1270px){
+    .texto_gracias{
+        font-size: 38px;
+    }
+}
+@media(max-width: 1100px){
+    .texto_gracias{
+        font-size: 20px;
+    }
+    .sub_tabla{
+        margin-left: 0%;
+    }
+    .pago{
+        margin-left: 25%;
+    
+    }
+}
+@media(max-width: 1000px){
+   .cards_tabla{
+    display: block;
+   }
+   .cards_tabla{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-left: 5%;
+    margin-top: 5%;
+   }
+   .contenedor_tabla{
+    display: none;
+   }
+   .sub_tabla{
+    display: none;
+   }
+   .info_cards{
+    background-color: rgb(196, 191, 191);
+    width: 90%;
+   }
+   .texto_art{
+    background-color: rgb(196, 191, 191);
+    
+   }
+   .cards_2{
+    background-color: rgb(196, 191, 191);
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+   }
+   .titulo_card{
+    width: 90%;
+    
+}
+.pago{
+    margin-left:0%;
+}
+.contenedor_gracias{
+    margin-left: 3%
+}
+
+}
+@media(max-width: 700px){
+    .bloque2{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
