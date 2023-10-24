@@ -1,4 +1,6 @@
 let usuarios = [];
+let op = null
+let indice=null
 
 function guardarDatos() {
     let nombre = document.getElementById('nombre').value;
@@ -10,6 +12,7 @@ function guardarDatos() {
     let telefono = document.getElementById('telefono').value;
     let correo = document.getElementById('correo').value;
 
+    
     let usuario = {
         nombre: nombre,
         apellido: apellido,
@@ -20,8 +23,13 @@ function guardarDatos() {
         telefono: telefono,
         correo: correo
     };
-
-    usuarios.push(usuario);
+    if (op===true){
+        usuarios[indice]=usuario
+          }else{
+        usuarios.push(usuario)
+          
+    }
+    // usuarios.push(usuario);
 
     document.getElementById('nombre').value = '';
     document.getElementById('apellido').value = '';
@@ -89,6 +97,81 @@ function validar() {
         }
     else {
         guardarDatos ()
+        document.getElementById("tabla").innerHTML = ""
+        pintar()
+        op=false
     }
 }
 }
+function pintar(){
+    let frag= document.createDocumentFragment()
+
+    usuarios.forEach((item, index) => {
+      let tr = document.createElement("tr")
+      let td1 = document.createElement("td")
+      let td2 = document.createElement("td")
+      let td3 = document.createElement("td")
+      let td4 = document.createElement("td")
+      let td5 = document.createElement("td")
+      let td6 = document.createElement("td")
+      let td7 = document.createElement("td")
+      let td8 = document.createElement("td")
+      let td9 = document.createElement("td")
+      let editar = document.createElement("button")
+      let eliminar = document.createElement("button")
+      editar.textContent = "📝"
+      editar.addEventListener("click",()=>{
+        edita(item, index)
+    })
+      eliminar.textContent="❌"
+      eliminar.addEventListener("click",() =>{
+        borrar(index)
+      })
+      td1.textContent=item.nombre
+      td2.textContent=item.apellido
+      td4.textContent=item.tipoDocumento
+      td3.textContent=item.numeroDocumento
+      td5.textContent=item.fechaNacimiento
+      td6.textContent=item.genero
+      td7.textContent=item.telefono
+      td8.textContent=item.correo
+      td9.appendChild(editar)
+      td9.appendChild(eliminar)
+      tr.appendChild(td1)
+      tr.appendChild(td2)
+      tr.appendChild(td3)
+      tr.appendChild(td4)
+      tr.appendChild(td5)
+      tr.appendChild(td6)
+      tr.appendChild(td7)
+      tr.appendChild(td8)
+      tr.appendChild(td9)
+      frag.appendChild(tr)
+      document.getElementById("tabla").appendChild(frag)
+    })
+  }
+
+
+  function edita(r, i){
+    op = true
+    indice=i
+console.log(r);
+document.getElementById("nombre").value=r.nombre
+document.getElementById("apellido").value=r.apellido
+document.getElementById("documento").value=r.tipoDocumento
+document.getElementById("numdocumento").value=r.numeroDocumento
+document.getElementById("fecha_nacimiento").value=r.fechaNacimiento
+if (r.genero === "Femenino") {
+    document.querySelector('input[name="genero"][value="Femenino"]').checked = true;
+  } else if (r.genero === "Masculino") {
+    document.querySelector('input[name="genero"][value="Masculino"]').checked = true;
+  }
+document.getElementById("telefono").value=r.telefono
+document.getElementById("correo").value=r.correo
+  }
+
+  function  borrar(index){
+    usuarios.splice(index, 1);
+    document.getElementById("tabla").innerHTML = "";
+    pintar();
+  }

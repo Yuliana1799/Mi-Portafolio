@@ -143,7 +143,6 @@ h1 {
     border: solid 2px rgb(133, 130, 130);
     width: 45%;
     background-color: rgb(79, 167, 62);
-    ;
     font-size: 20px;
     color: white;
     font-weight: bold;
@@ -157,7 +156,49 @@ h1 {
     color: brown;
     font-size: 15px;
 }
+.tabla_datos{
+    border-collapse: collapse;
+    border-spacing: 0;
 
+}
+.tabla1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+th{
+    border: 1px solid rgb(42, 112, 28);
+    padding: 15px;
+    background: linear-gradient(to bottom, rgb(111, 231, 165), rgb(78, 163, 248), rgb(111, 226, 247));
+    color: rgb(21, 66, 12);
+}
+td{
+    border: 1px solid rgb(42, 112, 28);
+    padding: 15px;
+}
+/* .tabla1 {
+    overflow-x: auto;
+    margin: 0 10px; 
+}
+
+.tabla_contenedor {
+    width: max-content;
+}
+
+.tabla_datos {
+    border-collapse: collapse;
+    width: 100%;
+    white-space: nowrap;
+}
+
+th, td {
+    min-width: 100px;
+    box-sizing: border-box;
+}
+
+th {
+    background-color: #f2f2f2;
+} */
 @media(max-width: 1900px) {
     .numdocum {
         width: 52%;
@@ -254,3 +295,45 @@ h1 {
         margin-right: 2%;
     }
 }
+
+
+/* @media (max-width: 1250px) {
+    .tabla1 {
+        overflow-x: auto;
+        margin: 0 10px; 
+    }
+
+    .tabla_datos {
+        width: max-content;
+        white-space: nowrap;
+    }
+
+    th, td {
+        min-width: 100px;
+        box-sizing: border-box;
+    }
+
+    th:not(:first-child) {
+        position: -webkit-sticky;
+        position: sticky;
+        background-color: #f2f2f2;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 370px) {
+    th, td {
+        min-width: 70px;
+        font-size: 12px;
+    }
+
+    .tabla1 {
+        overflow-x: auto;
+        margin: 0 5px;
+    }
+} */
+
+
+
+
+
