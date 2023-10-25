@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./main.js"></script>
+</head>
+
+<body>
+
+    <div class="Contenedor">
+        <div class="subcont1">
+            <p class="titulo">Gasto Semanal</p>
+        </div>
+        <div class="subcont2">
+            <div class="bloque1">
+                <div class="subtitulo">
+                    <p class="psubtitulo">Añade tus gastos aqui</p>
+                </div>
+                <div class="alerta1"></div>
+                <div class="alerta2"></div>
+                <div class="nomgasto"> <label for="gasto" class="gasto"><p class="parrafopre">Gastos:</p></label>
+                    <input class="editarnom" type="text" id="gastos" name="gasto" placeholder="Nombre del gasto"
+                        required>
+                </div>
+                <div class="nomgasto"> <label for="cantidad" class="cantidad"><p class="parrafopre">Cantidad:</p></label>
+                    <input class="editarnom" type="text" id="cantidad" name="cantidad" placeholder="Cantidad en $"
+                        required>
+                </div>
+                <div>
+                    <button onclick="validar()" class="boton" type="button">Agregar</button>
+                </div>
+            </div>
+            <div class="bloque2">
+                <div class="subtitulo">
+                    <p class="psubtitulo">Listado</p>
+                </div>
+                <div class="Listado"></div>
+                <div class="presupuesto"><p class="parrafopre" >Presupuesto: $</p></div>
+                <div class="restante"><p class="parrafopre">Restante: $ </p></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
