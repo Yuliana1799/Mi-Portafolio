@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./main.js"></script>
+
 </head>
 
 <body>
@@ -20,8 +20,6 @@
                 <div class="subtitulo">
                     <p class="psubtitulo">Añade tus gastos aqui</p>
                 </div>
-                <div class="alerta1"></div>
-                <div class="alerta2"></div>
                 <div class="nomgasto"> <label for="gasto" class="gasto">Gastos:</label><br>
                     <input class="editarnom" type="text" id="gastos" name="gasto" placeholder="Nombre del gasto"
                         required>
@@ -31,20 +29,27 @@
                         required>
                 </div>
                 <div>
-                    <button onclick="validar()" class="boton" type="button">Agregar</button>
+                    <button class="boton" type="button" id="botonAgregar">Agregar</button>
                 </div>
             </div>
             <div class="bloque2">
                 <div class="subtitulo">
                     <p class="psubtitulo">Listado</p>
                 </div>
-                <div class="Listado"></div>
-                <div class="presupuesto">Presupuesto: $</div>
-                <div class="restante">Restante: $ </div>
+                <div class="tarjetas-contenedor"></div>
+                <div class="presupuesto">
+                    <p class="textolis">Presupuesto Inicial: $0</p>
+                </div>
+                <div class="restante">
+                    <p class="textolis">Restante: $ </p>
+                </div>
             </div>
         </div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
