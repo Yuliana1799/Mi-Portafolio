@@ -3,10 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let saldoRestante = 0;
     const listaGastos = [];
   
-    // Obtén el botón por su ID
     const botonAgregar = document.getElementById('botonAgregar');
-  
-    // Asigna el evento de clic al botón
     botonAgregar.addEventListener('click', validar);
   
     function mostrarTarjetas() {
@@ -14,39 +11,36 @@ document.addEventListener('DOMContentLoaded', function () {
       tarjetasContenedor.innerHTML = '';
   
       listaGastos.forEach((gasto, index) => {
-          const tarjeta = document.createElement('div');
-          tarjeta.classList.add('tarjeta');
-          tarjeta.innerHTML = `<p>${gasto.nombre}: $${gasto.cantidad}</p>`;
-          
-          const botonBorrar = document.createElement('button');
-          botonBorrar.textContent = 'Borrar';
-          botonBorrar.className = 'boton-borrar';
-          botonBorrar.addEventListener('click', () => borrarGasto(index));
+        const tarjeta = document.createElement('div');
+        tarjeta.classList.add('tarjeta');
+        tarjeta.innerHTML = `<p>${gasto.nombre}: ${formatearComoMoneda(gasto.cantidad)}</p>`;
   
-          tarjeta.appendChild(botonBorrar);
-          tarjetasContenedor.appendChild(tarjeta);
+        const botonBorrar = document.createElement('button');
+        botonBorrar.textContent = 'Borrar';
+        botonBorrar.className = 'boton-borrar';
+        botonBorrar.addEventListener('click', () => borrarGasto(index));
+  
+        tarjeta.appendChild(botonBorrar);
+        tarjetasContenedor.appendChild(tarjeta);
       });
-  }
+    }
   
     function borrarGasto(index) {
-        const gastoABorrar = listaGastos[index];
-        saldoRestante += gastoABorrar.cantidad;
-        listaGastos.splice(index, 1);
-        mostrarTarjetas();
-        actualizarSaldo();
+      const gastoABorrar = listaGastos[index];
+      saldoRestante += gastoABorrar.cantidad;
+      listaGastos.splice(index, 1);
+      mostrarTarjetas();
+      actualizarSaldo();
+      mostrarAlerta('¡Gasto Borrado!', 'El gasto se ha borrado correctamente.');
     }
   
     function actualizarSaldo() {
-        const restanteLabel = document.querySelector('.restante p');
-        restanteLabel.textContent = `Restante: $${saldoRestante}`;
+      const restanteLabel = document.querySelector('.restante p');
+      restanteLabel.textContent = `Restante: ${formatearComoMoneda(saldoRestante)}`;
   
-        const porcentajeRestante = (saldoRestante / presupuestoTotal) * 100;
+      const porcentajeRestante = (saldoRestante / presupuestoTotal) * 100;
   
-        if (porcentajeRestante <= 20) {
-            restanteLabel.style.color = 'red';
-        } else {
-            restanteLabel.style.color = 'green';
-        }
+      restanteLabel.style.color = porcentajeRestante <= 20 ? 'red' : 'green';
     }
   
     function validar() {
@@ -57,25 +51,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const cantidadNumerica = parseFloat(cantidad.replace(/[^\d.]/g, ''));
   
         if (isNaN(cantidadNumerica) || cantidadNumerica <= 0) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Por favor, ingresa una cantidad válida.',
-          });
+          mostrarAlerta('Error', 'Por favor, ingresa una cantidad válida.');
           return;
         }
   
-        if (cantidadNumerica > window.saldoRestante) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'No tienes suficiente saldo para este gasto.',
-          });
+        if (cantidadNumerica > saldoRestante) {
+          mostrarAlerta('Error', 'No tienes suficiente saldo para este gasto.');
           return;
         }
   
         listaGastos.push({ nombre, cantidad: cantidadNumerica });
-        window.saldoRestante -= cantidadNumerica;
+        saldoRestante -= cantidadNumerica;
   
         mostrarTarjetas();
         actualizarSaldo();
@@ -83,36 +69,31 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('gastos').value = '';
         document.getElementById('cantidad').value = '';
   
-        Swal.fire({
-          icon: 'success',
-          title: '¡Gasto Agregado!',
-          text: 'El gasto se ha agregado correctamente.',
-        });
+        mostrarAlerta('¡Gasto Agregado!', 'El gasto se ha agregado correctamente.');
   
-        if (window.saldoRestante <= 0) {
-          Swal.fire({
-            icon: 'warning',
-            title: '¡Presupuesto Agotado!',
-            text: 'El presupuesto se ha agotado.',
-          });
+        if (saldoRestante <= 0) {
+          mostrarAlerta('¡Presupuesto Agotado!', 'El presupuesto se ha agotado.');
         }
       } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Por favor, ingresa el nombre y la cantidad del gasto.',
-        });
+        mostrarAlerta('Error', 'Por favor, ingresa el nombre y la cantidad del gasto.');
       }
     }
   
+    function mostrarAlerta(titulo, mensaje) {
+      Swal.fire({
+        icon: 'info',
+        title: titulo,
+        text: mensaje,
+      });
+    }
   
     function mostrarAlertaPresupuesto() {
       Swal.fire({
-        title: "¡Bienvenido!",
-        text: "Por favor, ingresa tu presupuesto:",
-        input: "text",
-        inputPlaceholder: "Ingresa tu presupuesto",
-        confirmButtonText: "Aceptar",
+        title: '¡Bienvenido!',
+        text: 'Por favor, ingresa tu presupuesto:',
+        input: 'text',
+        inputPlaceholder: 'Ingresa tu presupuesto',
+        confirmButtonText: 'Aceptar',
         allowOutsideClick: false,
         allowEscapeKey: false,
         allowEnterKey: false,
@@ -124,13 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (!isNaN(presupuesto) && presupuesto > 0) {
             inicializarPresupuesto(presupuesto);
           } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'Error',
-              text: 'Por favor, ingresa un presupuesto válido mayor que cero.',
-            }).then(() => {
-              mostrarAlertaPresupuesto(); // Vuelve a mostrar la alerta si el presupuesto no es válido
-            });
+            mostrarAlertaPresupuesto();
           }
         }
       });
@@ -143,8 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const restanteLabel = document.querySelector('.restante p');
       restanteLabel.textContent = `Restante: ${formatearComoMoneda(presupuesto)}`;
   
-      window.presupuestoTotal = parseFloat(presupuesto);
-      window.saldoRestante = parseFloat(presupuesto);
+      presupuestoTotal = parseFloat(presupuesto);
+      saldoRestante = parseFloat(presupuesto);
     }
   
     function formatearComoMoneda(valor) {
@@ -154,5 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       return formatoMoneda.format(valor);
     }
+  
     mostrarAlertaPresupuesto();
   });
+  
