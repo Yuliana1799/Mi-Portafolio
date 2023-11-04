@@ -152,4 +152,42 @@ body {
     font-size: 15px;
     width: 60%;
     border-radius: 5px;
+    height: 50px;
+}
+@media(max-width: 1250px){
+    .boton-borrar{
+    margin-left:30px ;
+    }
+}
+@media(max-width: 1100px){
+    .boton{
+        font-size: 10px;
+    }
+}
+@media(max-width: 850px){
+    .boton-borrar{
+     margin-left: 0px;
+    }
+}
+@media(max-width: 790px){
+    .subcont2{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .presupuesto{
+        margin-left: 50px;
+    }
+    .restante{
+        margin-left: 50px;
+    }
+    .boton-borrar{
+        margin:0px;
+        font-size: 10px;
+    }
+}
+@media(max-width: 400px){
+    .Contenedor{
+        display: flex;
+        justify-content: left;
+    }
 }
