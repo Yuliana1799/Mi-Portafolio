@@ -1,0 +1,74 @@
+/* *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(243, 232, 219);
+
+}
+.Contenedor{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.subcont1{
+    background-color: rgb(177, 97, 0);
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    
+}
+.titulo{
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: 10;
+}
+.subcont2{
+    background-color: aliceblue;
+    height: auto;
+    width: 80% ;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border: 2px solid green;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+.bloque1{
+    display: flex;
+    flex-direction: column;
+}
+.bloque2{
+    display: flex;
+    flex-direction: column;
+}
+.subtitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+.psubtitulo{
+    font-size: 25px;
+    color: rgb(133, 129, 129);
+}
+.nomgasto{
+    margin-left: 50px;
+    padding: 5px;
+}
+.editarnom{
+    width: 80%;
+    height: 25px;
+}
+.boton{
+    margin-left: 54px;
+    padding: 5px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    background-color: rgb(94, 94, 206);
+}
+.presupuesto */

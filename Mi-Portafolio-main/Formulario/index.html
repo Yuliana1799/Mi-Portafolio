@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formulario.css">
+    <script src="formulario.js"></script>
+</head>
+
+<body>
+    <h1 id="alert"></h1>
+    <form>
+        <div class="padre">
+            <div class="bloque1">
+                <h1>FORMULARIO DE REGISTRO</h1>
+            </div>
+            <div class="bloque2">
+                <label for="nombre" class="nombre">Nombre:</label>
+                <input class="editarnom" type="text" id="nombre" name="nombre" placeholder="Ingrese sus nombres"
+                    required>
+                <label for="apellido" class="nombre">Apellido:</label>
+                <input class="editarnom" type="text" id="apellido" name="nombre" placeholder="Ingrese sus apellidos">
+            </div>
+            <h4 class="nombre">Tipo De Documento</h4>
+            <div class="bloque3">
+                <select name="select" id="documento">
+                    <option class="identificacion" value="TI">T.I</option>
+                    <option class="identificacion" value="CC">CC</option>
+                    <option class="identificacion" value="TEX">Tarjeta Extrangera</option>
+
+                </select>
+                &nbsp; &nbsp;
+                <label for="documento" class="id">N° Documento:</label> &nbsp;
+                <input type="number" class="numdocum" id="numdocumento" name="numero" placeholder="n° documento">
+            </div><br>
+            <div class="bloque4">
+                <label for="fecha" class="nombre">Fecha de Nacimiento:</label>
+                <input class="fecha" type="date" id="fecha_nacimiento" name="nombre">
+            </div>
+            <div class="bloque5">
+                <h3 class="genero">Genero</h3>
+                <label for="genero" class="nombre">Masculino:</label>
+                <input type="radio" id="masculino" name="genero" value="Masculino">
+                <label for="genero" class="nombre">Femenino:</label>
+                <input type="radio" id="femenino" name="genero" value="Femenino">
+            </div>
+            <div class="bloque6">
+                <label for="telefono" class="nombre">Telefono:</label>
+                <input type="number" id="telefono" class="telefono" name="numero" placeholder="n° telefono">
+            </div>
+            <div class="bloque7">
+                <label for="email" class="nombre">Correo:</label>
+                <input type="email" id="correo" class="correo" name="correo" placeholder="correo">
+            </div>
+            <div class="bloque8">
+                <button onclick="validar()" class="boton" type="button">Registrarse</button>
+            </div>
+        </div>
+    </form>
+    <div class="tabla1">
+        <div class="tabla_contenedor"></div>
+            <table class="tabla_datos">
+             <thead>
+                <tr>
+                    <th class="campos">Nombre</th>
+                    <th class="campos">Apellido</th>
+                    <th class="campos">Tipo de documento</th>
+                    <th class="campos">Documento</th>
+                    <th class="campos">Fecha de Nacimiento</th>
+                    <th class="campos">Género</th>
+                    <th class="campos">Teléfono</th>
+                    <th class="campos">Correo</th>
+                    <th class="campos">Opciones</th>
+                </tr>
+
+             <tbody id="tabla">
+             </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</html>
