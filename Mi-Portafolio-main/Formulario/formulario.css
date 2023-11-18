@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(158, 241, 214);
+    height: 100vh;
+
+}
+
+.form {
+    height: 100%;
+}
+
+.padre {
+    margin-left: 30%;
+    margin-right: 30%;
+    background: linear-gradient(to bottom, rgb(111, 231, 165), rgb(78, 163, 248), rgb(111, 226, 247));
+    height: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 2px solid rgb(42, 112, 28);
+}
+
+.bloque1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+h1 {
+    color: rgb(21, 66, 12);
+}
+
+.bloque2 {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.nombre {
+    margin-left: 8%;
+    font-weight: bold;
+    color: white;
+    margin-top: 7px;
+}
+
+.editarnom {
+    width: 83%;
+    margin-left: 8%;
+    height: 35px;
+    border-radius: 8px;
+    border: solid 2px rgb(133, 130, 130);
+}
+
+.bloque3 {
+    display: flex;
+}
+
+#documento {
+    height: 35px;
+    width: 12%;
+    margin-left: 8%;
+    border-radius: 8px;
+    border: solid 2px rgb(133, 130, 130);
+    margin-top: 5px;
+}
+
+.identificacion {
+    font-weight: bold;
+}
+
+.id {
+    font-weight: bold;
+    color: white;
+    margin-top: 11px;
+}
+
+.numdocum {
+    height: 35px;
+    border-radius: 8px;
+    border: solid 2px rgb(133, 130, 130);
+    width: 54.6%;
+    margin-top: 5px;
+}
+
+.fecha {
+    height: 35px;
+    border-radius: 8px;
+    border: solid 2px rgb(133, 130, 130);
+    width: 62%;
+}
+
+.genero {
+    margin-bottom: 10px;
+    margin-left: 8%;
+    font-weight: bold;
+    color: white;
+    margin-top: 7px;
+}
+
+.telefono {
+    height: 35px;
+    border-radius: 8px;
+    border: solid 2px rgb(133, 130, 130);
+    width: 73%;
+    margin-top: 5px;
+    margin-left: 1%;
+}
+
+.correo {
+    height: 35px;
+    border-radius: 8px;
+    border: solid 2px rgb(133, 130, 130);
+    width: 73%;
+    margin-top: 5px;
+    margin-left: 3%;
+}
+
+.bloque5 {
+    margin-bottom: 8px;
+}
+
+.bloque6 {
+    margin-bottom: 8px;
+}
+
+.bloque8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 65px;
+}
+
+.boton {
+    height: 35px;
+    border-radius: 8px;
+    border: solid 2px rgb(133, 130, 130);
+    width: 45%;
+    background-color: rgb(79, 167, 62);
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#alert {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    color: brown;
+    font-size: 15px;
+}
+.tabla_datos{
+    border-collapse: collapse;
+    border-spacing: 0;
+
+}
+.tabla1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+th{
+    border: 1px solid rgb(42, 112, 28);
+    padding: 15px;
+    background: linear-gradient(to bottom, rgb(111, 231, 165), rgb(78, 163, 248), rgb(111, 226, 247));
+    color: rgb(21, 66, 12);
+}
+td{
+    border: 1px solid rgb(42, 112, 28);
+    padding: 15px;
+}
+/* .tabla1 {
+    overflow-x: auto;
+    margin: 0 10px; 
+}
+
+.tabla_contenedor {
+    width: max-content;
+}
+
+.tabla_datos {
+    border-collapse: collapse;
+    width: 100%;
+    white-space: nowrap;
+}
+
+th, td {
+    min-width: 100px;
+    box-sizing: border-box;
+}
+
+th {
+    background-color: #f2f2f2;
+} */
+@media(max-width: 1900px) {
+    .numdocum {
+        width: 52%;
+    }
+
+    .fecha {
+        width: 59%;
+    }
+}
+
+@media(max-width: 1700px) {
+    .numdocum {
+        width: 50%;
+    }
+
+    .fecha {
+        width: 56%;
+    }
+
+    .telefono {
+        width: 69%;
+    }
+
+    .correo {
+        width: 69%;
+    }
+}
+
+@media(max-width: 1500px) {
+    .numdocum {
+        width: 47%;
+    }
+
+    .fecha {
+        width: 53%;
+    }
+}
+
+@media(max-width: 1300px) {
+    .numdocum {
+        width: 43%;
+    }
+
+    .fecha {
+        width: 47%;
+    }
+
+    .telefono {
+        width: 65%;
+    }
+
+    .correo {
+        width: 65%;
+    }
+}
+
+@media(max-width: 1200px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    .numdocum {
+        width: 40%;
+    }
+
+    .fecha {
+        width: 44%;
+    }
+}
+
+@media(max-width: 1050px) {
+    .bloque3 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+    }
+
+    .bloque4 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+    }
+}
+
+@media(max-width: 872px) {
+    .bloque1 {
+        margin-left: 10%;
+    }
+}
+
+@media(max-width: 800px) {
+    .padre {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+
+
+/* @media (max-width: 1250px) {
+    .tabla1 {
+        overflow-x: auto;
+        margin: 0 10px; 
+    }
+
+    .tabla_datos {
+        width: max-content;
+        white-space: nowrap;
+    }
+
+    th, td {
+        min-width: 100px;
+        box-sizing: border-box;
+    }
+
+    th:not(:first-child) {
+        position: -webkit-sticky;
+        position: sticky;
+        background-color: #f2f2f2;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 370px) {
+    th, td {
+        min-width: 70px;
+        font-size: 12px;
+    }
+
+    .tabla1 {
+        overflow-x: auto;
+        margin: 0 5px;
+    }
+} */
+
+
+
+
+
