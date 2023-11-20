@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
@@ -34,11 +33,11 @@
                 <h2 class="subtitulo">Camina con estilo, encuentra tu par perfecto.</h2>
             </div>
             <div>
-                <p class="parrafo-1">Zapatos apartir de $60.000</p>
+                <p class="parrafo-1">Zapatos a partir de $60.000</p>
             </div>
 
             <div class="busqueda">
-                <p class="parrafo-1">¿Que te gustaria comprar?</p>
+                <p class="parrafo-1">¿Qué te gustaría comprar?</p>
             </div>
         </div>
         <div class="cards" id="cards">
@@ -50,12 +49,14 @@
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
             <div id="carrito-container">
-                <!-- Aquí se mostrarán los elementos del carrito -->
-                <div id="carrito-items"></div>
-                <div id="total">Total: $0</div>
+                <div id="productos-container"></div>
+                <div id="total"></div>
+                <div id="divBotonVaciarCarrito"></div>
             </div>
         </div>
     </div>
+
+    
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

@@ -125,10 +125,9 @@ nav {
     font-size: 18px;
 }
 
-/* Estilos generales para el modal */
 .modal {
     display: none;
-    /* Por defecto, el modal no se muestra */
+    overflow: auto;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -139,16 +138,14 @@ nav {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Estilos para el contenido del modal */
 .modal-content {
-    background-color: #fefefe;
+    background-color: rgb(240, 232, 226);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 500px;
 }
 
-/* Estilos para el botón de cerrar el modal */
 .close {
     color: #aaa;
     float: right;
@@ -162,20 +159,55 @@ nav {
     text-decoration: none;
     cursor: pointer;
 }
+.carrito-item {
+
+    margin-bottom: 10px; 
+}
+
+.carrito-item {
+    display: flex;
+    border: 1px solid rgb(240, 232, 226);
+    margin: 10px; 
+    padding: 10px; 
+}
 
 .imagen-carrito {
-    width: 50px;
-    /* ajusta el tamaño según tus necesidades */
-    height: 50px;
-    /* esto mantendrá la proporción original de la imagen */
+    width: 50px; 
+    height: 50px; 
+    margin-right: 10px; 
 }
-#carrito-container {
+
+.total-carrito {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}
+#divBotonVaciarCarrito {
     display: flex;
-    flex-wrap: wrap; /* Esto permite que los elementos se envuelvan si no hay suficiente espacio en el ancho de la pantalla */
-    justify-content: space-between; 
+    justify-content: flex-end;
+    margin-top: 10px;
+    background-color: aqua;
 }
-.carrito-item {
-    width: 48%; /* Ancho de cada elemento del carrito, ajusta según sea necesario */
-    margin-bottom: 10px; /* Espaciado inferior entre elementos */
-    /* Otros estilos que desees agregar */
+
+button {
+    margin-left: 10px;
+    background-color: rgb(206, 154, 145);
+}
+p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+@media(max-width: 1030px) {
+    #cards{
+        display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 680px) {
+    #cards{
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    }
 }
