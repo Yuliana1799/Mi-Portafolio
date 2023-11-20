@@ -123,10 +123,8 @@ function agregarAlCarrito(productoId) {
     if (producto) {
         const indice = carrito.findIndex((item) => item.id === productoId);
         if (indice !== -1) {
-            // Si el producto ya está en el carrito, incrementar la cantidad
             carrito[indice].cantidad++;
         } else {
-            // Si el producto no está en el carrito, agregarlo con cantidad 1
             producto.cantidad = 1;
             carrito.push(producto);
         }
@@ -182,7 +180,7 @@ function mostrarProductosEnCarrito() {
 
             let divCantidad = document.createElement("div");
             let pCantidad = document.createElement("p");
-            pCantidad.textContent = `Cantidad: ${item.cantidad}`; // Actualizado para mostrar la cantidad
+            pCantidad.textContent = `Cantidad: ${item.cantidad}`;
             divCantidad.appendChild(pCantidad);
 
             let divSubtotal = document.createElement("div");
@@ -210,7 +208,7 @@ function mostrarProductosEnCarrito() {
         totalContainer.textContent = `Total: $${total}`;
         totalContainer.classList.add("total-carrito");
 
-        carritoContainer.appendChild(productosContainer); // Agregar productos al contenedor principal
+        carritoContainer.appendChild(productosContainer);
         carritoContainer.appendChild(totalContainer);
     }
 }
@@ -218,35 +216,30 @@ function mostrarProductosEnCarrito() {
 
 
 function crearBotonVaciarCarrito(carritoContainer) {
-    // Verificar si ya hay un botón de vaciar carrito
     const divBotonVaciarCarrito = document.getElementById("boton-vaciar-carrito");
     if (divBotonVaciarCarrito) {
-        // Si existe, eliminarlo para evitar duplicados
         divBotonVaciarCarrito.remove();
     }
 
-    // Crear el nuevo botón
     const buttonVaciarCarrito = document.createElement("button");
     buttonVaciarCarrito.textContent = "Vaciar Carrito";
     buttonVaciarCarrito.addEventListener("click", vaciarCarrito);
     
-    // Crear el contenedor para el botón
+
     const divNuevoBoton = document.createElement("div");
     divNuevoBoton.id = "boton-vaciar-carrito";
     divNuevoBoton.appendChild(buttonVaciarCarrito);
 
-    // Agregar el contenedor al final del carrito
     carritoContainer.appendChild(divNuevoBoton);
 }
 
 function vaciarCarrito() {
     carrito.length = 0;
     mostrarProductosEnCarrito();
-    // Llamar a la función para crear el botón después de vaciar el carrito
+
     crearBotonVaciarCarrito(carritoContainer);
 }
 
-// Luego de agregar productos al carrito, llamas a esta función para crear el botón
 
 
 function abrirModal() {
