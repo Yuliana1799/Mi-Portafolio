@@ -136,7 +136,7 @@ function agregarAlCarrito(productoId) {
         });
 
         mostrarProductosEnCarrito();
-        crearBotonVaciarCarrito(carritoContainer);
+   
     }
 }
 
@@ -146,7 +146,6 @@ function mostrarProductosEnCarrito() {
     const carritoContainer = document.getElementById("carrito-container");
     const productosContainer = document.getElementById("productos-container");
     const totalContainer = document.getElementById("total");
-    const divBotonVaciarCarrito = document.getElementById("divBotonVaciarCarrito");
 
     let total = 0;
 
@@ -154,7 +153,7 @@ function mostrarProductosEnCarrito() {
 
     if (carrito.length === 0) {
         carritoContainer.textContent = "No hay productos en el carrito.";
-        totalContainer.textContent = "Total: $0";
+
 
     } else {
 
@@ -203,41 +202,28 @@ function mostrarProductosEnCarrito() {
 
             carritoContainer.appendChild(div);
 
-            total = item.precio * item.cantidad;
+            total += item.precio * item.cantidad;
         });
+
+        if (!totalContainer) {
+            totalContainer = document.createElement("div");
+            totalContainer.id = "total";
+            carritoContainer.appendChild(totalContainer);
+        }
+
         totalContainer.textContent = `Total: $${total}`;
         totalContainer.classList.add("total-carrito");
 
         carritoContainer.appendChild(productosContainer);
-        carritoContainer.appendChild(totalContainer);
+        carritoContainer.appendChild(totalContainer)
     }
 }
 
 
-
-function crearBotonVaciarCarrito(carritoContainer) {
-    const divBotonVaciarCarrito = document.getElementById("boton-vaciar-carrito");
-    if (divBotonVaciarCarrito) {
-        divBotonVaciarCarrito.remove();
-    }
-
-    const buttonVaciarCarrito = document.createElement("button");
-    buttonVaciarCarrito.textContent = "Vaciar Carrito";
-    buttonVaciarCarrito.addEventListener("click", vaciarCarrito);
-    
-
-    const divNuevoBoton = document.createElement("div");
-    divNuevoBoton.id = "boton-vaciar-carrito";
-    divNuevoBoton.appendChild(buttonVaciarCarrito);
-
-    carritoContainer.appendChild(divNuevoBoton);
-}
 
 function vaciarCarrito() {
     carrito.length = 0;
     mostrarProductosEnCarrito();
-
-    crearBotonVaciarCarrito(carritoContainer);
 }
 
 
@@ -245,7 +231,6 @@ function vaciarCarrito() {
 function abrirModal() {
     const modal = document.getElementById("modal");
     modal.style.display = "block";
-    crearBotonVaciarCarrito(carritoContainer);
 }
 
 

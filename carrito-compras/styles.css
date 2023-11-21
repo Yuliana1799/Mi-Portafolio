@@ -199,6 +199,19 @@ p{
     text-align: center;
     align-items: center;
 }
+.vaciar_carrito{
+    margin-top: 35px;
+    margin-bottom: 15px;
+    width: 40%;
+    height: 15%;
+    border-radius: 0.5vmax;
+    background-color: rgb(192, 148, 130);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 18px; 
+}
 @media(max-width: 1030px) {
     #cards{
         display: grid;
