@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.encabezado {
+    background-color: rgb(24, 153, 207);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 80px;
+}
+
+.titulo {
+    color: rgb(225, 214, 218);
+    font-size: 60px;
+}
+
+.abierto {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.terminadas {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.anuladas {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.filtro {
+    background-color: rgb(169, 222, 254);
+    width: 20%;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: rgb(23, 63, 99);
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.padre {
+    background-image: url(./fondo-1.jpeg);
+    height: 100%;
+    width: 100%;
+}
+
+.titulo_formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: white;
+    font-size: 38px;
+
+}
+
+.formulario {
+    background-color: rgb(24, 153, 207);
+    display: none;
+    width: 40%;
+    margin: 20px auto;
+    text-align: center;
+    height: 730px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="tel"],
+.formulario textarea {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 25px;
+
+}
+
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 25px;
+    color: grey;
+
+
+}
+
+
+.formulario input[type="date"],
+.formulario input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 28px;
+    color: grey;
+
+}
+
+.formulario button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 28px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.formulario button:hover {
+    background-color: rgb(254, 163, 220);
+}
+
+.formulario textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+#tipoMascota {
+    width: 85%;
+}
+
+#fecha {
+    width: 85%;
+}
+
+#hora {
+    width: 85%;
+}
+
+.boton_agendar {
+    border: none;
+    background-color: rgb(254, 163, 220);
+    height: 80px;
+    width: 250px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+    margin-top: 80px;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+}
+
+.imagen_principal {
+    margin-top: 120px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.imagenes {
+    width: 100%;
+    height: 350px;
+}
