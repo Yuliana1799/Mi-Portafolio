@@ -216,7 +216,6 @@ function mostrarProductosEnCarrito() {
         carritoContainer.appendChild(totalContainer)
         
     if (carrito.length === 0) {
-        // Si el carrito está vacío, establece el total en 0
         totalContainer.textContent = "Total: $0";
     }
 }

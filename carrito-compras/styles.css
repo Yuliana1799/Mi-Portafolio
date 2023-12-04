@@ -78,7 +78,6 @@ nav {
 .cards-container {
     display: flex;
     justify-content: space-between;
-    /* Esto distribuirá los elementos horizontalmente */
 }
 
 .cards {
@@ -182,12 +181,6 @@ nav {
     font-size: 18px;
     margin-top: 10px;
 }
-#divBotonVaciarCarrito {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-    background-color: aqua;
-}
 
 button {
     margin-left: 10px;
@@ -217,10 +210,54 @@ p{
         display: grid;
     grid-template-columns: repeat(2, 1fr);
     }
+    .parrafo-1{
+        font-size: 20px;
+    }
+    .subtitulo{
+        font-size: 19px;
+    }
+}
+@media(max-width: 850px) {
+    .fa-solid.fa-cart-plus{
+        margin-left: 100px;
+    }
 }
 @media(max-width: 680px) {
     #cards{
         display: grid;
     grid-template-columns: repeat(1, 1fr);
     }
+    .cards-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imagen_card{
+    height: 200px;
+    width: 200px;
+    }
+    .parrafo-1{
+        font-size: 15px;
+    }
+    .subtitulo{
+        font-size: 14px;
+    }
+    .imagen-zapato{
+        height: 200px; 
+    }
+    .titulo{
+        font-size: 30px;
+    }
+}
+@media(max-width: 380px) {
+    .imagen-zapato{
+        height: 100px; 
+    }
+    .imagen_card{
+        height: 100px;
+        width: 100px;
+        }
+        .boton_agregar{
+            font-size: 10px;
+        }
 }
