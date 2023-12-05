@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+
 </head>
 
 <body>
@@ -30,44 +30,52 @@
                     </div>
                     <div class="boton">
                         <div class="imagen_principal">
-                            <img class="imagenes" src="cerdito.jpg" alt="imagen">
-                            <img class="imagenes" src="perro.jpg" alt="imagen">
-                            <img class="imagenes" src="gato.jpg" alt="imagen">
-                            <img class="imagenes" src="pajarito.jpg" alt="imagen">
+                            <img class="imagenes" src="Cerdo.jpg" alt="imagen">
+                            <img class="imagenes" src="Perro.jpg" alt="imagen">
+                            <img class="imagenes" src="Gato.jpg" alt="imagen">
+                            <img class="imagenes" src="Ave.jpg" alt="imagen">
                         </div>
                     </div>
                 </div>
+                <div>
                 <div class="formulario" style="display: none;">
-                    <form id="formularioCita">
-                        <div class="titulo_formulario">
-                            <p>Ingrese los datos</p>
-                        </div>
-                        <input type="text" id="nombreMascota" placeholder="Nombre de la mascota" required><br>
-                        <input type="text" id="propietario" placeholder="Propietario" required><br>
-                        <input type="tel" id="telefono" placeholder="Teléfono" required><br>
+                    <div>
+                        <form id="formularioCita" novalidate>
+                            <div class="titulo_formulario">
+                                <p>Ingrese los datos</p>
+                            </div>
+                            <input type="text" id="nombreMascota" placeholder="Nombre de la mascota" required><br>
+                            <input type="text" id="propietario" placeholder="Propietario" required><br>
+                            <input type="tel" id="telefono" placeholder="Teléfono" required><br>
 
-                        <div>
-                            <select id="tipoMascota" required>
-                                <option value="">Selecciona el tipo de mascota</option>
-                                <option value="perro">Perro</option>
-                                <option value="gato">Gato</option>
-                                <option value="ave">Ave</option>
-                                <option value="reptil">Cerdo</option>
-                            </select><br>
-                        </div>
+                            <div>
+                                <select id="tipoMascota" required>
+                                    <option value="">Selecciona el tipo de mascota</option>
+                                    <option value="perro">Perro</option>
+                                    <option value="gato">Gato</option>
+                                    <option value="ave">Ave</option>
+                                    <option value="cerdo">Cerdo</option>
+                                </select><br>
+                            </div>
 
-                        <input type="date" id="fecha" min="" required><br>
-                        <input type="time" id="hora" min="08:00" max="18:00" required><br>
-                        <textarea placeholder="Síntomas" id="sintomas" required></textarea><br>
+                            <input type="date" id="fecha" min="" required><br>
+                            <input type="time" id="hora" min="08:00" max="18:00" required><br>
+                            <textarea placeholder="Síntomas" id="sintomas" required></textarea><br>
 
-                        <button type="submit">Agendar</button>
-                        <button type="button" onclick="cancelarAgenda()">Cancelar</button>
-                    </form>
+                            <button type="submit">Agendar</button>
+                            <button type="button" onclick="cancelarAgenda()">Cancelar</button>
+                        </form>
+                    </div>
+                    <div class="tarjetas-contenedor">
+                        <!-- Las tarjetas se agregarán aquí dinámicamente -->
+                    </div>
+
+                </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
