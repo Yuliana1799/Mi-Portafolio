@@ -18,7 +18,6 @@ function validarCampos() {
     const hora = document.getElementById('hora').value;
     const sintomas = document.getElementById('sintomas').value;
 
-    // Array para almacenar los campos vacíos
     const camposVacios = [];
     if (
         !nombreMascota ||
@@ -29,12 +28,12 @@ function validarCampos() {
         !hora ||
         !sintomas
     ) {
-        // Muestra una alerta si algún campo está vacío
+    
         mostrarAlerta('error', 'Completa todos los campos antes de agendar la cita.');
-        return false;  // Detiene el proceso de agendar la cita
+        return false;  
     }
 
-    // Validación para evitar alerta de teléfono al abrir el formulario
+    
     if (telefono.length < 8 || telefono.length > 16) {
         if (telefono.trim() !== "") {
             mostrarAlerta('error', 'El número de teléfono debe tener entre 8 y 16 dígitos.');
@@ -51,15 +50,14 @@ function validarCampos() {
         return false;
     }
 
-    // Otras validaciones...
 
-    // Verifica si hay campos vacíos
+    
     if (camposVacios.length > 0) {
-        // Muestra una alerta con los campos vacíos
+        
         mostrarAlerta('error', `Completa los siguientes campos:\n${camposVacios.join('\n')}`);
-        return false;  // Detiene el proceso de agendar la cita
+        return false;  
     } else {
-        // Crear un objeto con los datos del formulario
+        
         const nuevaCita = {
             nombreMascota: nombreMascota,
             propietario: propietario,
@@ -70,16 +68,16 @@ function validarCampos() {
             sintomas: sintomas,
         };
 
-        // Agregar el objeto a la lista de citas
+        
         citas.push(nuevaCita);
 
-        // Mostrar una alerta de éxito
+        
         mostrarAlerta('success', '¡Cita agendada correctamente!');
 
-        // Puedes resetear el formulario aquí si es necesario
+        
         document.getElementById('formularioCita').reset();
 
-        // Variables para la tarjeta
+        
         const tipoMascotaTarjeta = tipoMascota;
         const nombreMascotaTarjeta = nombreMascota;
         const propietarioTarjeta = propietario;
@@ -88,18 +86,18 @@ function validarCampos() {
         const horaTarjeta = hora;
         const sintomasTarjeta = sintomas;
 
-        // Crear y mostrar la tarjeta
+        
         mostrarTarjeta(tipoMascotaTarjeta, nombreMascotaTarjeta, propietarioTarjeta, telefonoTarjeta, fechaTarjeta, horaTarjeta, sintomasTarjeta);
 
         return true;
     }
 }
 function mostrarTarjeta(tipoMascota, nombreMascota, propietario, telefono, fecha, hora, sintomas) {
-    // Crear la estructura de la tarjeta
+    
     const tarjeta = document.createElement('div');
     tarjeta.classList.add('tarjeta');
 
-    // Llenar la tarjeta con la información de la cita
+    
     tarjeta.innerHTML = `
         <img class="imagen-tarjeta" src="./${tipoMascota}.jpg" alt="${tipoMascota}">
         <p>Nombre de la mascota: ${nombreMascota}</p>
@@ -111,7 +109,7 @@ function mostrarTarjeta(tipoMascota, nombreMascota, propietario, telefono, fecha
         <p>Síntomas: ${sintomas}</p>
     `;
 
-    // Agregar la nueva tarjeta al contenedor
+    
     const contenedorTarjetas = document.querySelector('.tarjetas-contenedor');
     contenedorTarjetas.appendChild(tarjeta);
 }
@@ -128,7 +126,7 @@ function Agendar() {
     const fechaMinima = `${anio}-${mes}-${dia}`;
     inputFecha.setAttribute('min', fechaMinima);
 
-    // Muestra el formulario
+    
     formulario.style.display = 'block';
     document.querySelector('.informacion').style.display = 'none';
     document.querySelector('.filtrar').style.display = 'none';
@@ -146,15 +144,14 @@ function cancelarAgenda() {
     mostrarAlerta('info', 'Agenda cancelada.');
 }
 
-// Agregar el evento submit al formulario
+
 document.getElementById('formularioCita').addEventListener('submit', function (event) {
-    // Previene el envío del formulario
+    
     event.preventDefault();
 
-    // Llama a la función validarCampos y agrega a la lista si es válido
+    
     if (validarCampos()) {
-        // Resto de la lógica para agendar la cita si es válido
-        // ...
+       
     }
 });
 console.log(citas);

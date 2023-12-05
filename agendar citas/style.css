@@ -185,13 +185,11 @@ body {
     width: 200px;
     height: 200px;
     margin-top: 20px;
-
-    /* Otros estilos que desees aplicar */
 }
 .tarjetas-contenedor {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 10px; /* Espaciado entre las tarjetas */
+    gap: 10px;
     margin-top: 60px;
     margin-bottom: 60px;
 }
