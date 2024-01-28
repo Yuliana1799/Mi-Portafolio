@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="padre">
+        <div class="contenedor1">
+            <div class="turno">
+                <div class="numero">
+                    <p class="turnum">00</p>
+                </div>
+                <div class="botones">
+                    <input type="button" value="Back" id="back" class="boton" onclick="back()">
+                    <input type="button" value="Next" id="next" class="boton" onclick="next()">
+                </div>
+            </div>
+            <div class="ticket"></div>
+        </div>
+        <div class="contenedor2">
+            <div class="generar">
+                <input type="button" value="Generar Turno" id="genetick" class="boton" onclick="genetick()">
+            </div>
+            <div class="borar">
+                <input type="button" value="Borrar" id="borar" class="boton_borar" onclick="reiniciarSistema()">
+
+            </div>
+            <div class="divcards">
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
