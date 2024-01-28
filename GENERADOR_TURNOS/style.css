@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(173, 204, 173);
+    background-color: rgb(237, 237, 209);
 }
 
 .padre {
@@ -20,16 +20,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(173, 204, 173);
+    background-color: rgb(237, 237, 209);
     height: 100vh;
 }
 
 .contenedor2 {
-    background-color: rgb(76, 129, 76);
+    background-color: rgb(237, 237, 209);
 }
 
 .turno {
-    background-color: blueviolet;
+    background-color:rgb(149, 146, 146);
     width: 70%;
     height: 550px;
     margin-top: 4px;
@@ -42,7 +42,7 @@ body {
 }
 
 .ticket {
-    background-color: brown;
+    background-color:rgb(149, 146, 146);
     width: 40%;
     height: 80px;
     margin-top: 40px;
@@ -50,7 +50,7 @@ body {
 }
 
 .numero {
-    background-color: bisque;
+    background-color: rgb(233, 226, 215);
     height: 390px;
     width: 80%;
     display: flex;
@@ -68,8 +68,8 @@ body {
 }
 
 .boton {
-    background-color: #770881;
-    color: #fff;
+    background-color: #90a1df;
+    color: black;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -128,8 +128,8 @@ p {
 }
 
 .boton_borar {
-    background-color: #770881;
-    color: #fff;
+    background-color: #90a1df;
+    color: black;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -150,7 +150,7 @@ p {
 .ticket {
     font-family: Arial, sans-serif;
     font-size: 35px;
-    color: white;
+    color: black;
     font-weight: bold;
     text-align: center;
 }

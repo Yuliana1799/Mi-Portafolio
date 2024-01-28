@@ -6,7 +6,7 @@ function genetick() {
     const nuevoTurno = totalTurnosGenerados;
 
     if (totalTurnosGenerados === 1) {
-        turnoActual = 1;
+        turnoActual = 0;
         document.getElementById('back').disabled = false;
         document.getElementById('next').disabled = false;
     }
